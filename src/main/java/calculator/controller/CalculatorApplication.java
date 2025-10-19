@@ -11,7 +11,7 @@ public class CalculatorApplication {
 
     private final ApplicationView view;
     private final InputProcessor inputProcessor;
-    private final Calculator calculator; // 추상화
+    private final Calculator calculator;
 
     public CalculatorApplication(ApplicationView view, InputProcessor inputProcessor, Calculator calculator) {
         this.view = view;
