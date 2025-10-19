@@ -20,7 +20,7 @@ public class CalculatorConfig {
         return new Calculator(operator());
     }
 
-    public Operator operator() {
+    private Operator operator() {
         return new Adder();
     }
 
