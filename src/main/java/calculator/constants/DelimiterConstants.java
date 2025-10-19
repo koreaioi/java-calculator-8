@@ -15,5 +15,6 @@ public class DelimiterConstants {
     public static final Integer CUSTOM_DELIMITER_PREFIX_INDEX = 0;
     public static final Integer CUSTOM_DELIMITER_INDEX = 2;
     public static final Integer CUSTOM_DELIMITER_SUFFIX_INDEX = 3;
+    public static final Integer CUSTOM_DELIMITER_SUBTRACT_INDEX = 5;
 
 }
