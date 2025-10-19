@@ -18,6 +18,11 @@ public class Number {
         return from(Integer.parseInt(number));
     }
 
+    public void operate(Number other) {
+        value += other.value;
+        // TODO 연산 결과가 Overflow 되는 EdgeCase 고려.
+    }
+
     // TODO 결과 출력을 위해, @Override toString() 추가
 
 }
