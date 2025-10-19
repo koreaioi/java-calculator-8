@@ -1,5 +1,6 @@
 package calculator.service.processor;
 
+import calculator.domain.delimiter.Delimiter;
 import calculator.domain.delimiter.DelimiterStorage;
 
 public class DelimiterManager{
@@ -16,6 +17,12 @@ public class DelimiterManager{
 
     public boolean hasDelimiter(String input) {
         return inspector.inspectDelimiter(input);
+    }
+
+    public String parseDelimiter(String input) {
+        Delimiter delimiter = parser.extractDelimiter(input);
+        storage.addDelimiter(delimiter);
+        return parser.subtractDelimiter(input);
     }
 
 }
