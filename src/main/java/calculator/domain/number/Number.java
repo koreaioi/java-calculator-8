@@ -7,7 +7,7 @@ public class Number {
     private int value;
 
     private Number(int value) {
-        // TODO -> 음수 검증 로직 추가
+        validateNumber(value);
         this.value = value;
     }
 
@@ -25,6 +25,12 @@ public class Number {
             this.value = operator.applyAsInt(this.value, other.value);
         }catch(ArithmeticException e){
             throw new IllegalArgumentException("양의 정수(1 ~ 2,147,483,647)를 입력해주세요."); // TODO 매직 리터럴 상수화 고려
+        }
+    }
+
+    public void validateNumber(int value) {
+        if (value < 0) { // TODO 매직 넘버 상수화 고려
+            throw new IllegalArgumentException("음수는 입력할 수 없습니다."); // TODO 매직 리터럴 상수화 고려
         }
     }
 
