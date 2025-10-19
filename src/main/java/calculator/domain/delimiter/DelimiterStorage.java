@@ -26,4 +26,8 @@ public class DelimiterStorage {
         delimiters.add(delimiter);
     }
 
+    public Set<Delimiter> getAllDelimiter() {
+        return Collections.unmodifiableSet(delimiters);
+    }
+
 }
