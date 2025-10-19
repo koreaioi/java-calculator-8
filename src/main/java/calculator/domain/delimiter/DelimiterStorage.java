@@ -22,4 +22,8 @@ public class DelimiterStorage {
         return INSTANCE;
     }
 
+    public void addDelimiter(Delimiter delimiter) {
+        delimiters.add(delimiter);
+    }
+
 }
