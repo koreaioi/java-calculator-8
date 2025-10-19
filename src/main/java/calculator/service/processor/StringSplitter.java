@@ -3,7 +3,10 @@ package calculator.service.processor;
 import calculator.domain.delimiter.Delimiter;
 import calculator.domain.delimiter.DelimiterStorage;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
+import calculator.domain.number.Number;
 
 import static calculator.constants.SplitConstants.*;
 
@@ -13,6 +16,13 @@ public class StringSplitter {
 
     public StringSplitter(DelimiterStorage delimiterStorage) {
         this.delimiterStorage = delimiterStorage;
+    }
+
+    public List<Number> splitToNumbers(String preprocessedInput) {
+        String pattern = createSplitPattern();
+        return Arrays.stream(preprocessedInput.split(pattern))
+                .map(Number::from)
+                .toList();
     }
 
     public String createSplitPattern() {
