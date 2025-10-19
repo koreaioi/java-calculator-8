@@ -1,5 +1,6 @@
 package calculator.domain.number;
 
+import java.util.Objects;
 import java.util.function.IntBinaryOperator;
 
 public class Number {
@@ -42,4 +43,16 @@ public class Number {
         return String.valueOf(this.value);
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        Number number = (Number) other;
+        return value == number.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(value);
+    }
 }
