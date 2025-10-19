@@ -21,8 +21,11 @@ public class Number {
     }
 
     public void operate(Number other, IntBinaryOperator operator) {
-        this.value = operator.applyAsInt(this.value, other.value);
-        // TODO 연산 결과가 Overflow 되는 EdgeCase 고려.
+        try{
+            this.value = operator.applyAsInt(this.value, other.value);
+        }catch(ArithmeticException e){
+            throw new IllegalArgumentException("양의 정수(1 ~ 2,147,483,647)를 입력해주세요."); // TODO 매직 리터럴 상수화 고려
+        }
     }
 
     // TODO 결과 출력을 위해, @Override toString() 추가
