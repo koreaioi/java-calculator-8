@@ -3,6 +3,7 @@ package calculator.domain.number;
 import java.util.Objects;
 import java.util.function.IntBinaryOperator;
 
+import static calculator.constants.ErrorMessage.*;
 import static calculator.constants.NumberConstants.ZERO;
 
 public class Number {
@@ -22,7 +23,7 @@ public class Number {
         try{
             return number.isEmpty() ? new Number(ZERO) : new Number(Integer.parseInt(number));
         }catch (NumberFormatException e){
-            throw new IllegalArgumentException("양의 정수(1 ~ 2,147,483,647)를 입력해주세요."); // TODO 매직 리터럴 상수화
+            throw new IllegalArgumentException(VALUE_IS_NOT_POSITIVE_INTEGER.getMessage());
         }
     }
 
@@ -30,13 +31,13 @@ public class Number {
         try{
             this.value = operator.applyAsInt(this.value, other.value);
         }catch(ArithmeticException e){
-            throw new IllegalArgumentException("양의 정수(1 ~ 2,147,483,647)를 입력해주세요."); // TODO 매직 리터럴 상수화
+            throw new IllegalArgumentException(ARITHMETIC_RESULT_EXCEED_RANGE.getMessage());
         }
     }
 
     public void validateNumber(int value) {
         if (value < ZERO) {
-            throw new IllegalArgumentException("음수는 입력할 수 없습니다."); // TODO 매직 리터럴 상수화
+            throw new IllegalArgumentException(VALUE_IS_NEGATIVE_INTEGER.getMessage());
         }
     }
 
@@ -57,4 +58,5 @@ public class Number {
     public int hashCode() {
         return Objects.hashCode(value);
     }
+
 }
