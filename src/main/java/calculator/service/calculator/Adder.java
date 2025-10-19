@@ -11,7 +11,7 @@ public class Adder implements Operator{
 
     @Override
     public void operate(Number accumulator, Number operand) {
-        accumulator.operate(operand);
+        accumulator.operate(operand, Math::addExact);
     }
 
 }

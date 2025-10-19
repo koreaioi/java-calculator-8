@@ -1,5 +1,7 @@
 package calculator.domain.number;
 
+import java.util.function.IntBinaryOperator;
+
 public class Number {
 
     private int value;
@@ -18,8 +20,8 @@ public class Number {
         return from(Integer.parseInt(number));
     }
 
-    public void operate(Number other) {
-        value += other.value;
+    public void operate(Number other, IntBinaryOperator operator) {
+        this.value = operator.applyAsInt(this.value, other.value);
         // TODO 연산 결과가 Overflow 되는 EdgeCase 고려.
     }
 
