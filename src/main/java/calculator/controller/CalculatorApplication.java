@@ -25,7 +25,7 @@ public class CalculatorApplication {
         view.printResult(result.toString());
     }
 
-    public Number execute(String input) {
+    private Number execute(String input) {
         String preprocessedInput = inputProcessor.preprocessInput(input);
         List<Number> allOperand = inputProcessor.splitToOperands(preprocessedInput);
         return calculator.calculate(allOperand);
