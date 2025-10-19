@@ -28,6 +28,9 @@ public class Number {
         }
     }
 
-    // TODO 결과 출력을 위해, @Override toString() 추가
+    @Override
+    public String toString() {
+        return String.valueOf(this.value);
+    }
 
 }
