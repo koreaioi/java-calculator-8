@@ -11,7 +11,9 @@ public class DelimiterConstants {
     public static final String CUSTOM_DELIMITER_PREFIX = "//";
     public static final String CUSTOM_DELIMITER_SUFFIX = "\\n";
 
+    public static final Integer NOT_FOUND = -1;
     public static final Integer CUSTOM_DELIMITER_PREFIX_INDEX = 0;
+    public static final Integer CUSTOM_DELIMITER_INDEX = 2;
     public static final Integer CUSTOM_DELIMITER_SUFFIX_INDEX = 3;
 
 }

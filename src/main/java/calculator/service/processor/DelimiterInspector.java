@@ -1,16 +1,9 @@
 package calculator.service.processor;
 
 import static calculator.constants.DelimiterConstants.*;
+import static calculator.constants.ErrorMessage.*;
 
 public class DelimiterInspector {
-
-    /* TODO
-    * DelimiterInspector 는 커스텀 구분자가 있는 지 검사한다. (검사 = 확인 + 검증)
-    * 1. 커스텀 구분자 입력 형식이 존재하는 지 확인한다.
-    * 2. 있다면 return true
-    * 3. 없다면 커스텀 구분자 입력 형식을 잘못 작성했는 지 검증한다. (검증 내역은 기능 구현 목록을 참고)
-    * 4. 검증까지 통과한다면 return false (커스텀 구분자를 입력하지 않겠다는 사용자의 의도로 파악)
-    * */
 
     public boolean inspectDelimiter(String input) {
         int prefixIndex = input.indexOf(CUSTOM_DELIMITER_PREFIX);
@@ -18,12 +11,57 @@ public class DelimiterInspector {
         if (checkDelimiter(prefixIndex, suffixIndex)) {
             return true;
         }
-        // TODO 검증 로직 구현
+        validateDelimiterFormat(prefixIndex, suffixIndex);
         return false;
     }
 
     private boolean checkDelimiter(int prefixIndex, int suffixIndex) {
         return prefixIndex == CUSTOM_DELIMITER_PREFIX_INDEX && suffixIndex == CUSTOM_DELIMITER_SUFFIX_INDEX;
+    }
+
+    private void validateDelimiterFormat(int prefixIndex, int suffixIndex) {
+        validateDelimiterPrefix(prefixIndex, suffixIndex);
+        validateDelimiterSuffix(prefixIndex, suffixIndex);
+        validateDelimiterValue(prefixIndex, suffixIndex);
+        validateDelimiterLength(prefixIndex, suffixIndex);
+        validateDelimiterAffixOrder(prefixIndex, suffixIndex);
+        validateDelimiterFormatPosition(prefixIndex, suffixIndex);
+    }
+
+    private void validateDelimiterPrefix(int prefixIndex, int suffixIndex) {
+        if(prefixIndex == NOT_FOUND && suffixIndex != NOT_FOUND){
+            throw new IllegalArgumentException(INVALID_CUSTOM_DELIMITER_PREFIX.getMessage());
+        }
+    }
+
+    private void validateDelimiterSuffix(int prefixIndex, int suffixIndex) {
+        if(prefixIndex != NOT_FOUND && suffixIndex == NOT_FOUND){
+            throw new IllegalArgumentException(INVALID_CUSTOM_DELIMITER_SUFFIX.getMessage());
+        }
+    }
+
+    private void validateDelimiterValue(int prefixIndex, int suffixIndex) {
+        if (prefixIndex == CUSTOM_DELIMITER_PREFIX_INDEX && suffixIndex == CUSTOM_DELIMITER_INDEX) {
+            throw new IllegalArgumentException(EMPTY_CUSTOM_DELIMITER.getMessage());
+        }
+    }
+
+    private void validateDelimiterLength(int prefixIndex, int suffixIndex) {
+        if (prefixIndex == CUSTOM_DELIMITER_PREFIX_INDEX && suffixIndex > CUSTOM_DELIMITER_SUFFIX_INDEX) {
+            throw new IllegalArgumentException(CUSTOM_DELIMITER_IS_STRING.getMessage());
+        }
+    }
+
+    private void validateDelimiterAffixOrder(int prefixIndex, int suffixIndex) {
+        if(prefixIndex > suffixIndex) {
+            throw new IllegalArgumentException(INVALID_CUSTOM_DELIMITER_AFFIX_ORDER.getMessage());
+        }
+    }
+
+    private void validateDelimiterFormatPosition(int prefixIndex, int suffixIndex) {
+        if(prefixIndex > CUSTOM_DELIMITER_PREFIX_INDEX && suffixIndex > CUSTOM_DELIMITER_SUFFIX_INDEX) {
+            throw new IllegalArgumentException(INVALID_CUSTOM_DELIMITER_POSITION.getMessage());
+        }
     }
 
 }
