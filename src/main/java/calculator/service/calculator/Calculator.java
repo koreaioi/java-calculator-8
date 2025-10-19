@@ -11,9 +11,9 @@ public class Calculator {
         this.operator = operator;
     }
 
-    public Number calculate(List<Number> numbers) {
+    public Number calculate(List<Number> allOperand) {
         Number accumulator = operator.getInitialAccumulator();
-        for (Number operand : numbers) {
+        for (Number operand : allOperand) {
             operator.operate(accumulator, operand);
         }
         return accumulator;
