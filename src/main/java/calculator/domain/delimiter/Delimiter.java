@@ -1,7 +1,6 @@
 package calculator.domain.delimiter;
 
-import static calculator.constants.DelimiterConstants.ASCII_NINE;
-import static calculator.constants.DelimiterConstants.ASCII_ZERO;
+import static calculator.constants.DelimiterConstants.*;
 import static calculator.constants.ErrorMessage.CUSTOM_DELIMITER_IS_NUMBER;
 
 public class Delimiter {
@@ -23,6 +22,12 @@ public class Delimiter {
         }
     }
 
-    // TODO 패턴자 생성을 위해 @Override toString
+    @Override
+    public String toString() {
+        if (symbol == BACK_SLASH) {
+            return REGEX_BACK_SLASH;
+        }
+        return String.valueOf(symbol);
+    }
 
 }

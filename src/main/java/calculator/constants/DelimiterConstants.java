@@ -17,4 +17,7 @@ public class DelimiterConstants {
     public static final Integer CUSTOM_DELIMITER_SUFFIX_INDEX = 3;
     public static final Integer CUSTOM_DELIMITER_SUBTRACT_INDEX = 5;
 
+    public static final Character BACK_SLASH = '\\';
+    public static final String REGEX_BACK_SLASH = "\\\\";
+
 }
