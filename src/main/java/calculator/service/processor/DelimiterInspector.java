@@ -1,5 +1,7 @@
 package calculator.service.processor;
 
+import static calculator.constants.DelimiterConstants.*;
+
 public class DelimiterInspector {
 
     /* TODO
@@ -10,8 +12,18 @@ public class DelimiterInspector {
     * 4. 검증까지 통과한다면 return false (커스텀 구분자를 입력하지 않겠다는 사용자의 의도로 파악)
     * */
 
-    public boolean inspectDelimiter(String delimiter) {
+    public boolean inspectDelimiter(String input) {
+        int prefixIndex = input.indexOf(CUSTOM_DELIMITER_PREFIX);
+        int suffixIndex = input.indexOf(CUSTOM_DELIMITER_SUFFIX);
+        if (checkDelimiter(prefixIndex, suffixIndex)) {
+            return true;
+        }
+        // TODO 검증 로직 구현
         return false;
+    }
+
+    private boolean checkDelimiter(int prefixIndex, int suffixIndex) {
+        return prefixIndex == CUSTOM_DELIMITER_PREFIX_INDEX && suffixIndex == CUSTOM_DELIMITER_SUFFIX_INDEX;
     }
 
 }
