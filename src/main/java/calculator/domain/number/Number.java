@@ -3,6 +3,8 @@ package calculator.domain.number;
 import java.util.Objects;
 import java.util.function.IntBinaryOperator;
 
+import static calculator.constants.NumberConstants.ZERO;
+
 public class Number {
 
     private int value;
@@ -18,7 +20,7 @@ public class Number {
 
     public static Number from(String number) {
         try{
-            return number.isEmpty() ? new Number(0) : new Number(Integer.parseInt(number)); // TODO 매직 넘버 상수화
+            return number.isEmpty() ? new Number(ZERO) : new Number(Integer.parseInt(number));
         }catch (NumberFormatException e){
             throw new IllegalArgumentException("양의 정수(1 ~ 2,147,483,647)를 입력해주세요."); // TODO 매직 리터럴 상수화
         }
@@ -33,7 +35,7 @@ public class Number {
     }
 
     public void validateNumber(int value) {
-        if (value < 0) { // TODO 매직 넘버 상수화
+        if (value < ZERO) {
             throw new IllegalArgumentException("음수는 입력할 수 없습니다."); // TODO 매직 리터럴 상수화
         }
     }
