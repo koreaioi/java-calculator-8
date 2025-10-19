@@ -19,6 +19,12 @@ public class CalculatorApplication {
         this.calculator = calculator;
     }
 
+    public void run() {
+        String input = view.requestInput();
+        Number result = execute(input);
+        view.printResult(result.toString());
+    }
+
     public Number execute(String input) {
         String preprocessedInput = inputProcessor.preprocessInput(input);
         List<Number> allOperand = inputProcessor.splitToOperands(preprocessedInput);
