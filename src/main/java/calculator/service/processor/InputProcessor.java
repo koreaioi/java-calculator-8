@@ -8,4 +8,11 @@ public class InputProcessor {
         this.delimiterManager = delimiterManager;
     }
 
+    public String preprocessInput(String input) {
+        if (delimiterManager.hasDelimiter(input)) {
+            return delimiterManager.parseDelimiter(input);
+        }
+        return input;
+    }
+
 }
