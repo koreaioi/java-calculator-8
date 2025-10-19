@@ -1,6 +1,6 @@
 package calculator.service.calculator;
 
-import calculator.config.CalculatorConfig;
+import calculator.common.config.CalculatorConfig;
 import calculator.domain.number.Number;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package calculator.constants;
+package calculator.common.constants;
 
 public class DelimiterConstants {
 

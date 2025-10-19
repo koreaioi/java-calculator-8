@@ -2,7 +2,7 @@ package calculator.domain.number;
 
 import org.junit.jupiter.api.Test;
 
-import static calculator.constants.ErrorMessage.*;
+import static calculator.common.message.ErrorMessage.*;
 import static org.assertj.core.api.Assertions.*;
 
 class NumberTest {

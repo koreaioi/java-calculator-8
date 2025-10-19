@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static calculator.constants.DelimiterConstants.COLON;
-import static calculator.constants.DelimiterConstants.COMMA;
+import static calculator.common.constants.DelimiterConstants.COLON;
+import static calculator.common.constants.DelimiterConstants.COMMA;
 
 public class DelimiterStorage {
 

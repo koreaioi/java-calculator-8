@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.config.ApplicationConfig;
+import calculator.common.config.ApplicationConfig;
 import calculator.controller.CalculatorApplication;
 
 public class Application {

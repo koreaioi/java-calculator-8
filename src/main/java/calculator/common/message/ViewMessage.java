@@ -1,4 +1,4 @@
-package calculator.constants;
+package calculator.common.message;
 
 public enum ViewMessage {
 

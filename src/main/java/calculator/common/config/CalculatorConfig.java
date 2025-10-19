@@ -1,4 +1,4 @@
-package calculator.config;
+package calculator.common.config;
 
 import calculator.service.calculator.Adder;
 import calculator.service.calculator.Calculator;

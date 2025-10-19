@@ -2,8 +2,8 @@ package calculator.service.processor;
 
 import calculator.domain.delimiter.Delimiter;
 
-import static calculator.constants.DelimiterConstants.CUSTOM_DELIMITER_INDEX;
-import static calculator.constants.DelimiterConstants.CUSTOM_DELIMITER_SUBTRACT_INDEX;
+import static calculator.common.constants.DelimiterConstants.CUSTOM_DELIMITER_INDEX;
+import static calculator.common.constants.DelimiterConstants.CUSTOM_DELIMITER_SUBTRACT_INDEX;
 
 public class DelimiterParser {
 

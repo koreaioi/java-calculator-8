@@ -1,4 +1,4 @@
-package calculator.config;
+package calculator.common.config;
 
 import calculator.view.ApplicationView;
 import calculator.view.InputReader;

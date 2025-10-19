@@ -3,8 +3,7 @@ package calculator.domain.number;
 import java.util.Objects;
 import java.util.function.IntBinaryOperator;
 
-import static calculator.constants.ErrorMessage.*;
-import static calculator.constants.NumberConstants.ZERO;
+import static calculator.common.constants.NumberConstants.ZERO;
 
 public class Number {
 

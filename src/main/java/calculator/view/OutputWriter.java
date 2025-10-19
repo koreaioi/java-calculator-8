@@ -1,7 +1,7 @@
 package calculator.view;
 
-import static calculator.constants.ViewMessage.REQUEST_INPUT_MESSAGE;
-import static calculator.constants.ViewMessage.RESULT_FORMAT;
+import static calculator.common.message.ViewMessage.REQUEST_INPUT_MESSAGE;
+import static calculator.common.message.ViewMessage.RESULT_FORMAT;
 
 public class OutputWriter {
 
