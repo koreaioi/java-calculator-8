@@ -2,11 +2,13 @@ package calculator.service.calculator;
 
 import calculator.domain.number.Number;
 
+import static calculator.common.constants.NumberConstants.ZERO;
+
 public class Adder implements Operator{
 
     @Override
     public Number getInitialAccumulator() {
-        return Number.from(0); // TODO 매직넘버 수정
+        return Number.from(ZERO);
     }
 
     @Override

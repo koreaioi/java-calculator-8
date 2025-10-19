@@ -1,5 +1,6 @@
 package calculator.domain.delimiter;
 
+import static calculator.common.constants.DelimiterConstants.*;
 import static calculator.common.message.ErrorMessage.CUSTOM_DELIMITER_IS_NUMBER;
 
 public class Delimiter {

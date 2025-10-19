@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.function.IntBinaryOperator;
 
 import static calculator.common.constants.NumberConstants.ZERO;
+import static calculator.common.message.ErrorMessage.*;
 
 public class Number {
 

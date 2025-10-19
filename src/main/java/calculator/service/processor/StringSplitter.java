@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import calculator.domain.number.Number;
 
+import static calculator.common.constants.SplitConstants.*;
+
 public class StringSplitter {
 
     private final DelimiterStorage delimiterStorage;

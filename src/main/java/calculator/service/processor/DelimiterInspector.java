@@ -1,5 +1,8 @@
 package calculator.service.processor;
 
+import static calculator.common.constants.DelimiterConstants.*;
+import static calculator.common.message.ErrorMessage.*;
+
 public class DelimiterInspector {
 
     public boolean inspectDelimiter(String input) {
