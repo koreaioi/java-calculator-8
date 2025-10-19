@@ -24,8 +24,8 @@ class CalculatorTest {
                 Number.from(6)
         );
 
-        String result = calculator.calculate(testNumbers).toString();
-        assert result.equals("12");
+        Number result = calculator.calculate(testNumbers);
+        assert result.equals(Number.from(12));
     }
 
 }
