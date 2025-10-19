@@ -14,4 +14,8 @@ public class DelimiterManager{
         this.storage = storage;
     }
 
+    public boolean hasDelimiter(String input) {
+        return inspector.inspectDelimiter(input);
+    }
+
 }
