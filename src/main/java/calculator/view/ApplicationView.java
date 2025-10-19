@@ -15,4 +15,8 @@ public class ApplicationView {
         return inputReader.getInput();
     }
 
+    public void printResult(String result) {
+        outputWriter.printResult(result);
+    }
+
 }
